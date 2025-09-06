@@ -1,6 +1,6 @@
 # To-Do List
 
-Find the original repository [here](https://github.com/cutiecoding/js-to-do-list)
+Find the original repository [here](https://github.com/cutiecoding/js-to-do-list) <br>
 Start your own to-do list [here](https://witty-forest-02384a210.1.azurestaticapps.net)
 
 ### Changes made:
