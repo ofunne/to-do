@@ -57,7 +57,7 @@ function addTask() {
     tasks.unshift(newTask)
 
     const taskElement = createTaskElement(newTask)
-    taskList.prepend(taskElement)
+    taskList.append(taskElement)
 
     taskInput.value = ''
     saveTasks()
