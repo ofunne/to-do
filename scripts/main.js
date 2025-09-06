@@ -6,6 +6,22 @@ const clearButton = document.querySelector('.clear-button')
 
 let tasks = []
 
+function saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function loadTasks() {
+    const storedTasks = localStorage.getItem('tasks')
+    if (storedTasks) {
+        tasks = JSON.parse(storedTasks)
+        tasks.forEach(task => {
+            const taskElement = createTaskElement(task)
+            taskList.appendChild(taskElement)
+        })
+    }
+    updateEmptyState()
+}
+
 function createTaskElement(task) {
     const taskItem = document.createElement('li')
     taskItem.className = 'task-item'
@@ -44,6 +60,7 @@ function addTask() {
     taskList.prepend(taskElement)
 
     taskInput.value = ''
+    saveTasks()
     updateEmptyState()
 }
 
@@ -53,12 +70,14 @@ function deleteTask(taskId) {
     const taskElement = taskList.querySelector(`[data-id="${taskId}"]`)
     if (taskElement) taskElement.remove()
 
+    saveTasks()
     updateEmptyState()
 }
 
 function clearTasks() {
     tasks = []
     taskList.innerHTML = ''
+    saveTasks()
     updateEmptyState()
 }
 
@@ -86,8 +105,9 @@ taskList.addEventListener('click', function (e) {
         const task = tasks.find(t => t.id === taskId)
         if (task) {
             task.completed = e.target.checked
+            saveTasks()
         }
     }
 })
 
-document.addEventListener('DOMContentLoaded', updateEmptyState)
+document.addEventListener('DOMContentLoaded', loadTasks)

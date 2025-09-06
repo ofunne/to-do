@@ -39,44 +39,6 @@ body {
     border: 5px solid var(--toasted-walnut);
 }
 
-.cloud {
-    position: absolute;
-
-    top: -70px;
-    left: -100px;
-
-    width: 240px;
-    height: 172px;
-}
-
-.star {
-    position: absolute;
-    top: -75px;
-    right: -20px;
-
-    width: 114px;
-    height: 112px;
-}
-
-.plant-2 {
-    position: absolute;
-
-    bottom: -65px;
-    left: -65px;
-
-    width: 108px;
-    height: 141px;
-}
-
-.strawberry {
-    position: absolute;
-    right: -50px;
-    bottom: -70px;
-
-    width: 192px;
-    height: 241px;
-}
-
 .head {
     display: flex;
     justify-content: center;
